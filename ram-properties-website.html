@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ram Properties — Sector 40, Gurugram</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sage: #5B7B6A; --sage-light: #7A9B89; --sage-dark: #3F5C4C; --sage-pale: #E8F0EB;
+  --cream: #FDFBF7; --warm-white: #F8F5F0; --sand: #F0EBE3;
+  --charcoal: #2C2C2C; --text-dark: #1F2937; --text-body: #4B5563; --text-muted: #8B8B8B;
+  --accent-terracotta: #C67B5C; --accent-blue: #5B7B9B;
+  --white: #FFFFFF; --border: #E5E1DB;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06); --shadow-md: 0 8px 30px rgba(0,0,0,0.08); --shadow-lg: 0 20px 50px rgba(0,0,0,0.1);
+}
+*{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text-body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:1280px;margin:0 auto;padding:0 40px}
+.section-label{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sage);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::before{content:'';width:24px;height:2px;background:var(--sage);border-radius:2px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,48px);font-weight:600;color:var(--text-dark);line-height:1.2}
+.section-title span{color:var(--sage)}
+.section-subtitle{font-size:16px;color:var(--text-muted);line-height:1.7;margin-top:14px;max-width:520px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+.top-bar{background:var(--sage-dark);padding:10px 0;font-size:13px;color:rgba(255,255,255,0.85)}
+.top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top-bar a{color:#fff;text-decoration:none;font-weight:500}
+.top-bar-right{display:flex;gap:28px;align-items:center}
+
+.navbar{position:sticky;top:0;z-index:100;background:rgba(253,251,247,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all 0.3s}
+.navbar .container{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-icon{width:44px;height:44px;background:var(--sage);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:#fff}
+.logo-text{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--text-dark)}
+.logo-text small{display:block;font-family:'Outfit',sans-serif;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--sage)}
+.nav-links{display:flex;list-style:none;gap:32px;align-items:center}
+.nav-links a{color:var(--text-body);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.3s}
+.nav-links a:hover{color:var(--sage)}
+.nav-cta{background:var(--sage)!important;color:#fff!important;padding:10px 24px;border-radius:8px;font-weight:600!important;font-size:13px!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--text-dark)}
+
+.hero{position:relative;padding:60px 0 80px;background:var(--warm-white);overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,var(--cream));pointer-events:none}
+.hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero-content{max-width:560px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--sage-pale);padding:8px 18px;border-radius:40px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage);margin-bottom:24px;animation:fadeUp 0.6s ease both}
+.hero-badge .dot{width:7px;height:7px;background:var(--sage);border-radius:50%;animation:float 2s ease infinite}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,5.5vw,58px);font-weight:600;line-height:1.1;color:var(--text-dark);margin-bottom:20px;animation:fadeUp 0.8s ease both 0.1s}
+.hero h1 em{font-style:italic;color:var(--sage)}
+.hero-desc{font-size:17px;line-height:1.7;color:var(--text-muted);margin-bottom:32px;animation:fadeUp 0.8s ease both 0.2s}
+.hero-search{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:8px;box-shadow:var(--shadow-lg);animation:fadeUp 0.8s ease both 0.35s}
+.search-tabs{display:flex;margin-bottom:8px;padding:4px;background:var(--sand);border-radius:10px}
+.search-tab{flex:1;padding:10px 20px;font-size:13px;font-weight:600;color:var(--text-muted);background:none;border:none;cursor:pointer;border-radius:8px;transition:all 0.3s;font-family:'Outfit',sans-serif}
+.search-tab.active{color:#fff;background:var(--sage);box-shadow:0 2px 8px rgba(91,123,106,0.3)}
+.search-fields{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px}
+.search-field{background:var(--warm-white);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.search-field label{display:block;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage);margin-bottom:4px}
+.search-field select{width:100%;background:none;border:none;color:var(--text-dark);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;outline:none;cursor:pointer}
+.search-field select option{background:var(--white)}
+.search-btn{background:var(--sage);border:none;border-radius:10px;padding:16px 28px;color:#fff;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all 0.3s;white-space:nowrap}
+.search-btn:hover{background:var(--sage-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(91,123,106,0.3)}
+
+.hero-visual{position:relative;animation:scaleIn 0.8s ease both 0.2s}
+.hero-gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:520px}
+.hero-gallery .hero-img{border-radius:14px;overflow:hidden;position:relative}
+.hero-gallery .hero-img:first-child{grid-row:1/3}
+.hero-gallery .hero-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+.hero-gallery .hero-img:hover img{transform:scale(1.05)}
+.hero-card-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px 20px 20px;background:linear-gradient(transparent,rgba(0,0,0,0.65));color:#fff}
+.hero-card-price{font-family:'Playfair Display',serif;font-size:24px;font-weight:600}
+.hero-card-addr{font-size:13px;opacity:0.85;margin-top:2px}
+.float-card{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:16px 22px;z-index:3;box-shadow:var(--shadow-md)}
+.float-card-1{top:20px;left:-30px;animation:float 4s ease infinite}
+.float-card-2{bottom:60px;right:-20px;animation:float 4s ease infinite 1.5s}
+.float-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--sage)}
+.float-label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-top:2px}
+
+.stats-bar{padding:48px 0;background:var(--cream)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat-item{text-align:center;padding:28px 20px;background:var(--white);border:1px solid var(--border);border-radius:16px;transition:all 0.3s}
+.stat-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.stat-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--sage);line-height:1}
+.stat-label{font-size:13px;font-weight:500;color:var(--text-muted);margin-top:8px}
+
+.services{padding:90px 0}
+.services-header{text-align:center;margin-bottom:56px}
+.services-header .section-label{justify-content:center}
+.services-header .section-subtitle{margin:14px auto 0}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.4s}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.service-card-img{height:200px;overflow:hidden}
+.service-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+.service-card:hover .service-card-img img{transform:scale(1.08)}
+.service-card-body{padding:28px}
+.service-card h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;margin-bottom:12px;color:var(--text-dark)}
+.service-card p{font-size:14px;line-height:1.7;color:var(--text-muted);margin-bottom:20px}
+.service-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--sage);text-decoration:none;transition:gap 0.3s}
+.service-link:hover{gap:14px}
+
+.listings{padding:90px 0;background:var(--warm-white)}
+.listings-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:20px}
+.listings-filter{display:flex;gap:8px}
+.filter-btn{padding:10px 22px;border:1px solid var(--border);border-radius:40px;background:var(--white);color:var(--text-muted);font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.3s}
+.filter-btn.active,.filter-btn:hover{background:var(--sage);border-color:var(--sage);color:#fff}
+.listings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.listing-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.4s}
+.listing-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.listing-img{position:relative;aspect-ratio:16/11;overflow:hidden}
+.listing-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+.listing-card:hover .listing-img img{transform:scale(1.06)}
+.listing-badge{position:absolute;top:14px;left:14px;padding:6px 14px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
+.badge-sale{background:var(--sage);color:#fff}
+.badge-rent{background:var(--accent-blue);color:#fff}
+.badge-new{background:var(--accent-terracotta);color:#fff}
+.listing-fav{position:absolute;top:14px;right:14px;width:36px;height:36px;background:rgba(255,255,255,0.9);border:none;border-radius:50%;color:var(--text-muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+.listing-fav:hover{background:var(--sage);color:#fff}
+.listing-info{padding:22px}
+.listing-price{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--text-dark)}
+.listing-price sup{font-family:'Outfit',sans-serif;font-size:13px;font-weight:400;color:var(--text-muted)}
+.listing-title{font-size:15px;font-weight:600;color:var(--text-dark);margin:8px 0 4px}
+.listing-loc{font-size:13px;color:var(--text-muted);margin-bottom:16px}
+.listing-meta{display:flex;gap:20px;padding-top:14px;border-top:1px solid var(--border)}
+.listing-meta span{font-size:13px;color:var(--text-muted);display:flex;align-items:center;gap:5px}
+
+.about{padding:90px 0}
+.about .container{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-visual{position:relative}
+.about-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.about-img-grid .aimg{border-radius:14px;overflow:hidden;height:200px}
+.about-img-grid .aimg:first-child{grid-column:1/-1;height:260px}
+.about-img-grid .aimg img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.about-img-grid .aimg:hover img{transform:scale(1.04)}
+.about-accent-box{position:absolute;bottom:-20px;right:-20px;background:var(--sage);border-radius:14px;padding:24px 28px;color:#fff;text-align:center;box-shadow:var(--shadow-md)}
+.about-accent-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;line-height:1}
+.about-accent-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:4px;opacity:0.9}
+.about-content .section-title{margin-bottom:20px}
+.about-desc{font-size:15px;line-height:1.8;color:var(--text-muted);margin-bottom:28px}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:32px}
+.about-feat{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--text-dark)}
+.about-feat-icon{width:28px;height:28px;background:var(--sage-pale);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--sage);font-size:13px;flex-shrink:0}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;padding:14px 28px;border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s}
+.btn-primary:hover{background:var(--sage-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(91,123,106,0.25)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:none;border:2px solid var(--sage);color:var(--sage);padding:12px 28px;border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;transition:all 0.3s}
+.btn-outline:hover{background:var(--sage-pale)}
+
+.area-guide{padding:90px 0;background:var(--warm-white)}
+.area-guide-header{text-align:center;margin-bottom:48px}
+.area-guide-header .section-label{justify-content:center}
+.area-guide-header .section-subtitle{margin:14px auto 0}
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.area-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 22px;text-align:center;transition:all 0.3s}
+.area-card:hover{border-color:var(--sage-pale);transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.area-card-icon{width:52px;height:52px;background:var(--sage-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 14px}
+.area-card h4{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text-dark);margin-bottom:8px}
+.area-card p{font-size:13px;color:var(--text-muted);line-height:1.6}
+.area-card .distance{display:inline-block;margin-top:10px;font-size:12px;color:var(--sage);font-weight:600;background:var(--sage-pale);padding:4px 12px;border-radius:20px}
+
+.testimonials{padding:90px 0}
+.testimonials-header{text-align:center;margin-bottom:48px}
+.testimonials-header .section-label{justify-content:center}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:32px 28px;position:relative;transition:all 0.3s}
+.testimonial-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.testimonial-stars{color:#F5A623;font-size:15px;letter-spacing:2px;margin-bottom:14px}
+.testimonial-text{font-size:15px;line-height:1.7;color:var(--text-body);font-style:italic;margin-bottom:24px}
+.testimonial-author{display:flex;align-items:center;gap:14px}
+.testimonial-avatar{width:46px;height:46px;border-radius:50%;overflow:hidden}
+.testimonial-avatar img{width:100%;height:100%;object-fit:cover}
+.testimonial-name{font-size:15px;font-weight:600;color:var(--text-dark)}
+.testimonial-role{font-size:12px;color:var(--text-muted);margin-top:2px}
+.testimonial-quote-mark{position:absolute;top:16px;right:24px;font-family:'Playfair Display',serif;font-size:72px;line-height:1;color:var(--sage-pale)}
+
+.cta-section{padding:90px 0;background:var(--warm-white)}
+.cta-box{background:var(--sage);border-radius:24px;padding:72px 60px;text-align:center;position:relative;overflow:hidden;color:#fff}
+.cta-box::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%)}
+.cta-box .section-label{color:rgba(255,255,255,0.7);justify-content:center}
+.cta-box .section-label::before{background:rgba(255,255,255,0.5)}
+.cta-box .section-title{color:#fff;margin-bottom:16px}
+.cta-box .section-title span{color:rgba(255,255,255,0.8)}
+.cta-box p{max-width:480px;margin:0 auto 32px;color:rgba(255,255,255,0.8);font-size:16px;line-height:1.7}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+.cta-btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--sage-dark);padding:14px 32px;border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s}
+.cta-btn-outline{display:inline-flex;align-items:center;gap:8px;background:none;border:2px solid rgba(255,255,255,0.4);color:#fff;padding:12px 32px;border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;transition:all 0.3s}
+
+.contact{padding:90px 0}
+.contact .container{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact-desc{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:36px}
+.contact-items{display:flex;flex-direction:column;gap:24px}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.contact-item-icon{width:48px;height:48px;background:var(--sage-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.contact-item h4{font-size:15px;font-weight:600;color:var(--text-dark);margin-bottom:4px}
+.contact-item p{font-size:14px;color:var(--text-muted);line-height:1.6}
+.contact-item a{color:var(--sage);text-decoration:none;font-weight:500}
+.contact-form-wrap{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;box-shadow:var(--shadow-sm)}
+.contact-form-wrap h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--text-dark);margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-body);margin-bottom:6px}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--warm-white);border:1px solid var(--border);border-radius:10px;padding:13px 16px;color:var(--text-dark);font-family:'Outfit',sans-serif;font-size:14px;outline:none;transition:border-color 0.3s}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(91,123,106,0.1)}
+.form-group textarea{min-height:90px;resize:vertical}
+
+.footer{background:var(--charcoal);color:rgba(255,255,255,0.7);padding:72px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo{margin-bottom:18px}.footer-brand .logo-text{color:#fff}.footer-brand .logo-text small{color:var(--sage-light)}
+.footer-brand p{font-size:14px;line-height:1.7;max-width:300px;margin-bottom:20px}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:38px;height:38px;border:1px solid rgba(255,255,255,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;transition:all 0.3s}
+.footer-social a:hover{border-color:var(--sage);color:var(--sage-light);background:rgba(91,123,106,0.15)}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sage-light);margin-bottom:18px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.3s}
+.footer-col a:hover{color:var(--sage-light)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:22px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,0.4)}
+.footer-bottom-links{display:flex;gap:20px}
+.footer-bottom-links a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none}
+
+.whatsapp-fab{position:fixed;bottom:28px;right:28px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:1000;cursor:pointer;transition:transform 0.3s;text-decoration:none;color:#fff;font-size:26px}
+.whatsapp-fab:hover{transform:scale(1.1)}
+
+@media(max-width:1024px){.hero .container{grid-template-columns:1fr}.hero-visual{display:none}.search-fields{grid-template-columns:1fr 1fr}.services-grid,.listings-grid{grid-template-columns:1fr 1fr}.about .container{grid-template-columns:1fr;gap:48px}.area-grid{grid-template-columns:repeat(2,1fr)}.contact .container{grid-template-columns:1fr;gap:40px}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.container{padding:0 20px}.nav-links{display:none}.hamburger{display:flex}.search-fields,.form-row{grid-template-columns:1fr}.services-grid,.listings-grid,.testimonials-grid,.area-grid,.footer-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr);gap:12px}.cta-box{padding:48px 24px}.hero{padding:40px 0 60px}.listings-filter{flex-wrap:wrap}.about-features{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="container"><span>📍 Market Rd, Sector 40, Gurugram, Haryana 122003</span><div class="top-bar-right"><span>📞 <a href="tel:09818049217">098180 49217</a></span><span>✉️ <a href="mailto:info@ramproperties.in">info@ramproperties.in</a></span><span>🕐 Mon–Sat: 8 AM – 8 PM</span></div></div></div>
+
+<nav class="navbar" id="navbar"><div class="container"><a href="#" class="logo"><div class="logo-icon">R</div><div class="logo-text">Ram Properties<small>Sector 40 · Gurugram</small></div></a><ul class="nav-links"><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#listings">Properties</a></li><li><a href="#about">About</a></li><li><a href="#area">Area Guide</a></li><li><a href="#contact">Contact</a></li><li><a href="#contact" class="nav-cta">List Property</a></li></ul><button class="hamburger"><span></span><span></span><span></span></button></div></nav>
+
+<section class="hero" id="home"><div class="container">
+<div class="hero-content">
+<div class="hero-badge"><span class="dot"></span> Sector 40's Trusted Real Estate Partner</div>
+<h1>Find Your <em>Perfect</em> Home in Gurugram</h1>
+<p class="hero-desc">Buy, sell, or rent premium flats in Sector 40 and surrounding areas. With 15+ years of local expertise, we make your property journey seamless.</p>
+<div class="hero-search"><div class="search-tabs"><button class="search-tab active" onclick="setTab(this)">Buy</button><button class="search-tab" onclick="setTab(this)">Rent</button><button class="search-tab" onclick="setTab(this)">Sell</button></div>
+<div class="search-fields"><div class="search-field"><label>Location</label><select><option>Sector 40, Gurugram</option><option>Sector 39</option><option>Sector 41</option><option>Sector 45</option><option>South City I</option><option>Greenwood City</option></select></div><div class="search-field"><label>Property Type</label><select><option>All Types</option><option>2 BHK Flat</option><option>3 BHK Flat</option><option>4 BHK Flat</option><option>Builder Floor</option><option>Independent House</option></select></div><div class="search-field"><label>Budget</label><select><option>Any Budget</option><option>Under ₹50 Lakh</option><option>₹50L – ₹1 Cr</option><option>₹1 Cr – ₹2 Cr</option><option>₹2 Cr – ₹5 Cr</option><option>₹5 Cr+</option></select></div><button class="search-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</button></div></div></div>
+<div class="hero-visual"><div class="hero-gallery"><div class="hero-img"><img src="house2.png" alt="Stone facade luxury home"><div class="hero-card-overlay"><div class="hero-card-price">₹1.85 Cr</div><div class="hero-card-addr">3 BHK Builder Floor, Sector 40</div></div></div><div class="hero-img"><img src="house1.png" alt="Classic white brick home"></div><div class="hero-img"><img src="house3.png" alt="Ranch style home"></div></div><div class="float-card float-card-1"><div class="float-num">500+</div><div class="float-label">Properties Sold</div></div><div class="float-card float-card-2"><div class="float-num">98%</div><div class="float-label">Happy Clients</div></div></div>
+</div></section>
+
+<div class="stats-bar"><div class="container"><div class="stats-grid"><div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">Years Experience</div></div><div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Properties Sold</div></div><div class="stat-item"><div class="stat-num">₹12,150</div><div class="stat-label">Avg. Price/sq.ft</div></div><div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">Active Listings</div></div></div></div></div>
+
+<section class="services" id="services"><div class="container"><div class="services-header"><div class="section-label">Our Services</div><h2 class="section-title">Buy, Sell & Rent with <span>Confidence</span></h2><p class="section-subtitle">Whether you're buying your first home, selling a property, or looking for a rental — we guide you through every step.</p></div>
+<div class="services-grid">
+<div class="service-card"><div class="service-card-img"><img src="house4.png" alt="Buy"></div><div class="service-card-body"><h3>Buy Property</h3><p>Find your dream flat in Sector 40. From 2 BHK flats to luxury builder floors, options for every budget starting from ₹50 Lakh.</p><a href="#listings" class="service-link">Explore Properties →</a></div></div>
+<div class="service-card"><div class="service-card-img"><img src="house1.png" alt="Sell"></div><div class="service-card-body"><h3>Sell Property</h3><p>Get the best market value for your property. Free valuation, professional photography, and a network of verified buyers.</p><a href="#contact" class="service-link">Get Free Valuation →</a></div></div>
+<div class="service-card"><div class="service-card-img"><img src="house3.png" alt="Rent"></div><div class="service-card-body"><h3>Rent Property</h3><p>Find quality tenants or your next rental home. Monthly rentals from ₹18,000 to ₹58,000. We handle documentation to move-in.</p><a href="#listings" class="service-link">View Rentals →</a></div></div>
+</div></div></section>
+
+<section class="listings" id="listings"><div class="container"><div class="listings-header"><div><div class="section-label">Featured Properties</div><h2 class="section-title">Handpicked Homes in <span>Sector 40</span></h2><p class="section-subtitle">Curated listings across Sector 40, Greenwood City, and South City I — verified and ready.</p></div><div class="listings-filter"><button class="filter-btn active">All</button><button class="filter-btn">For Sale</button><button class="filter-btn">For Rent</button><button class="filter-btn">New Launch</button></div></div>
+<div class="listings-grid">
+<div class="listing-card"><div class="listing-img"><img src="house2.png" alt="3BHK"><span class="listing-badge badge-sale">For Sale</span><button class="listing-fav">♡</button></div><div class="listing-info"><div class="listing-price">₹1.85 Cr</div><div class="listing-title">Spacious 3 BHK Builder Floor</div><div class="listing-loc">📍 Block G, Sector 40, Gurugram</div><div class="listing-meta"><span>🛏 3 Beds</span><span>🚿 3 Bath</span><span>📐 1,800 sqft</span></div></div></div>
+<div class="listing-card"><div class="listing-img"><img src="house3.png" alt="2BHK"><span class="listing-badge badge-rent">For Rent</span><button class="listing-fav">♡</button></div><div class="listing-info"><div class="listing-price">₹35,000 <sup>/month</sup></div><div class="listing-title">Furnished 2 BHK Apartment</div><div class="listing-loc">📍 Greenwood City, Sector 45</div><div class="listing-meta"><span>🛏 2 Beds</span><span>🚿 2 Bath</span><span>📐 1,200 sqft</span></div></div></div>
+<div class="listing-card"><div class="listing-img"><img src="house1.png" alt="4BHK"><span class="listing-badge badge-new">New Launch</span><button class="listing-fav">♡</button></div><div class="listing-info"><div class="listing-price">₹9.2 Cr</div><div class="listing-title">Premium 4 BHK Builder Floor</div><div class="listing-loc">📍 South City I, Sector 41</div><div class="listing-meta"><span>🛏 4 Beds</span><span>🚿 4 Bath</span><span>📐 2,600 sqft</span></div></div></div>
+<div class="listing-card"><div class="listing-img"><img src="house4.png" alt="1BHK"><span class="listing-badge badge-sale">For Sale</span><button class="listing-fav">♡</button></div><div class="listing-info"><div class="listing-price">₹72.9 L</div><div class="listing-title">Cozy 1 BHK Apartment</div><div class="listing-loc">📍 Block P, Sector 40</div><div class="listing-meta"><span>🛏 1 Bed</span><span>🚿 1 Bath</span><span>📐 600 sqft</span></div></div></div>
+<div class="listing-card"><div class="listing-img"><img src="house2.png" alt="3BHK"><span class="listing-badge badge-rent">For Rent</span><button class="listing-fav">♡</button></div><div class="listing-info"><div class="listing-price">₹55,000 <sup>/month</sup></div><div class="listing-title">Semi-Furnished 3 BHK Flat</div><div class="listing-loc">📍 Unitech Ivory Towers, Sec 40</div><div class="listing-meta"><span>🛏 3 Beds</span><span>🚿 2 Bath</span><span>📐 1,650 sqft</span></div></div></div>
+<div class="listing-card"><div class="listing-img"><img src="house3.png" alt="House"><span class="listing-badge badge-sale">For Sale</span><button class="listing-fav">♡</button></div><div class="listing-info"><div class="listing-price">₹7.8 Cr</div><div class="listing-title">Independent House, Greenwood City</div><div class="listing-loc">📍 Greenwood City, Gurugram</div><div class="listing-meta"><span>🛏 5 Beds</span><span>🚿 5 Bath</span><span>📐 3,200 sqft</span></div></div></div>
+</div><div style="text-align:center;margin-top:44px;"><a href="#" class="btn-outline">View All Properties →</a></div></div></section>
+
+<section class="about" id="about"><div class="container">
+<div class="about-visual"><div class="about-img-grid"><div class="aimg"><img src="house4.png" alt="Home"></div><div class="aimg"><img src="house1.png" alt="Classic"></div><div class="aimg"><img src="house2.png" alt="Stone"></div></div><div class="about-accent-box"><div class="about-accent-num">15+</div><div class="about-accent-label">Years of Trust</div></div></div>
+<div class="about-content"><div class="section-label">About Ram Properties</div><h2 class="section-title">Your Neighbourhood <span>Property Expert</span></h2><p class="about-desc">Established on Market Road, Sector 40, Ram Properties has been the go-to real estate consultant for families and investors across Gurugram. Our deep knowledge of Sector 40 and its surrounding localities — including South City I, Greenwood City, and Sectors 39–45 — ensures you always get the best deals.</p>
+<div class="about-features"><div class="about-feat"><div class="about-feat-icon">✓</div>RERA Verified</div><div class="about-feat"><div class="about-feat-icon">✓</div>Free Valuation</div><div class="about-feat"><div class="about-feat-icon">✓</div>Home Loan Help</div><div class="about-feat"><div class="about-feat-icon">✓</div>Legal Docs</div><div class="about-feat"><div class="about-feat-icon">✓</div>Tenant Verification</div><div class="about-feat"><div class="about-feat-icon">✓</div>Interior Design</div></div>
+<div style="display:flex;gap:14px;flex-wrap:wrap;"><a href="#contact" class="btn-primary">Schedule Visit →</a><a href="tel:09818049217" class="btn-outline">📞 Call Now</a></div></div></div></section>
+
+<section class="area-guide" id="area"><div class="container"><div class="area-guide-header"><div class="section-label">Area Guide</div><h2 class="section-title">Why <span>Sector 40</span> is Perfect</h2><p class="section-subtitle">Well-connected, well-equipped, and vibrant — one of the most sought-after residential areas in Gurugram.</p></div>
+<div class="area-grid">
+<div class="area-card"><div class="area-card-icon">🚇</div><h4>Metro Access</h4><p>HUDA City Centre Metro for seamless commute</p><span class="distance">3.2 km</span></div>
+<div class="area-card"><div class="area-card-icon">🏥</div><h4>Top Hospitals</h4><p>Fortis Memorial & Shivam Hospital</p><span class="distance">2–5 km</span></div>
+<div class="area-card"><div class="area-card-icon">🎓</div><h4>Premium Schools</h4><p>Amity Global, Gurugram University & IILM</p><span class="distance">1–4 km</span></div>
+<div class="area-card"><div class="area-card-icon">🛍️</div><h4>Shopping</h4><p>Raheja Mall, Gurgaon Central & Market Road</p><span class="distance">1–3 km</span></div>
+<div class="area-card"><div class="area-card-icon">🏢</div><h4>IT Hubs</h4><p>Udyog Vihar, DLF Cyber City & One Horizon</p><span class="distance">5–10 km</span></div>
+<div class="area-card"><div class="area-card-icon">🛣️</div><h4>Expressways</h4><p>NH-8, Dwarka Expressway, FNG & Sohna Rd</p><span class="distance">Quick connect</span></div>
+<div class="area-card"><div class="area-card-icon">🏋️</div><h4>Fitness</h4><p>Cult Gym Sector 45, parks and green belts</p><span class="distance">1–3 km</span></div>
+<div class="area-card"><div class="area-card-icon">🔒</div><h4>Safety</h4><p>Police Station Sector 40 & gated communities</p><span class="distance">0.5 km</span></div>
+</div></div></section>
+
+<section class="testimonials" id="testimonials"><div class="container"><div class="testimonials-header"><div class="section-label">Client Reviews</div><h2 class="section-title">What Our <span>Clients Say</span></h2></div>
+<div class="testimonials-grid">
+<div class="testimonial-card"><div class="testimonial-quote-mark">&ldquo;</div><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">Ram Properties helped us find our dream 3 BHK in Sector 40 within our budget. Their knowledge of the area is unmatched!</p><div class="testimonial-author"><div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Amit"></div><div><div class="testimonial-name">Amit Kumar</div><div class="testimonial-role">Bought 3 BHK, Sector 40</div></div></div></div>
+<div class="testimonial-card"><div class="testimonial-quote-mark">&ldquo;</div><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">We sold our property at the best price thanks to Ram Properties. They brought verified buyers and handled all documentation smoothly.</p><div class="testimonial-author"><div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Priya"></div><div><div class="testimonial-name">Priya Sharma</div><div class="testimonial-role">Sold Builder Floor, South City I</div></div></div></div>
+<div class="testimonial-card"><div class="testimonial-quote-mark">&ldquo;</div><div class="testimonial-stars">★★★★☆</div><p class="testimonial-text">Renting through Ram Properties was hassle-free. They verified the tenant, prepared the agreement, and helped with police verification.</p><div class="testimonial-author"><div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Rajesh"></div><div><div class="testimonial-name">Rajesh Gupta</div><div class="testimonial-role">Rented 2 BHK, Greenwood City</div></div></div></div>
+</div></div></section>
+
+<section class="cta-section"><div class="container"><div class="cta-box"><div class="section-label">Get Started Today</div><h2 class="section-title">Ready to Find Your <span>Perfect Property?</span></h2><p>Whether you're buying, selling, or renting — our team is ready to help you make the best decision in Sector 40.</p><div class="cta-buttons"><a href="#contact" class="cta-btn-white">Schedule Free Consultation →</a><a href="tel:09818049217" class="cta-btn-outline">📞 098180 49217</a></div></div></div></section>
+
+<section class="contact" id="contact"><div class="container">
+<div class="contact-info"><div class="section-label">Get in Touch</div><h2 class="section-title">Let's Discuss Your <span>Property Needs</span></h2><p class="contact-desc">Visit our office at Market Road, Sector 40, or reach out via phone or email.</p>
+<div class="contact-items"><div class="contact-item"><div class="contact-item-icon">📍</div><div><h4>Office</h4><p>Market Rd, Sector 40, Gurugram 122003</p></div></div><div class="contact-item"><div class="contact-item-icon">📞</div><div><h4>Phone</h4><p><a href="tel:09818049217">098180 49217</a></p></div></div><div class="contact-item"><div class="contact-item-icon">✉️</div><div><h4>Email</h4><p><a href="mailto:info@ramproperties.in">info@ramproperties.in</a></p></div></div><div class="contact-item"><div class="contact-item-icon">🕐</div><div><h4>Hours</h4><p>Mon–Sat: 8 AM – 8 PM</p></div></div></div></div>
+<div class="contact-form-wrap"><h3>Send Us a Message</h3><div class="form-row"><div class="form-group"><label>Full Name</label><input type="text" placeholder="Your name"></div><div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 "></div></div><div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div><div class="form-row"><div class="form-group"><label>I'm looking to</label><select><option>Buy a Property</option><option>Sell a Property</option><option>Rent a Property</option><option>Get Valuation</option></select></div><div class="form-group"><label>Budget</label><select><option>Select Budget</option><option>Under ₹50 Lakh</option><option>₹50L – ₹1 Cr</option><option>₹1 Cr – ₹2 Cr</option><option>₹2 Cr+</option></select></div></div><div class="form-group"><label>Message</label><textarea placeholder="Tell us about your requirements..."></textarea></div><button class="btn-primary" style="width:100%;justify-content:center;">Submit Enquiry →</button></div></div></section>
+
+<footer class="footer"><div class="container"><div class="footer-grid">
+<div class="footer-brand"><a href="#" class="logo"><div class="logo-icon">R</div><div class="logo-text">Ram Properties<small>Sector 40 · Gurugram</small></div></a><p>Your trusted real estate consultant in Sector 40, Gurugram. Helping families find their perfect home for over 15 years.</p><div class="footer-social"><a href="#">f</a><a href="#">in</a><a href="#">✕</a><a href="#">▶</a></div></div>
+<div class="footer-col"><h4>Quick Links</h4><ul><li><a href="#listings">Buy</a></li><li><a href="#listings">Rent</a></li><li><a href="#listings">Sell</a></li><li><a href="#area">Area Guide</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div class="footer-col"><h4>Property Types</h4><ul><li><a href="#">2 BHK Flats</a></li><li><a href="#">3 BHK Flats</a></li><li><a href="#">Builder Floors</a></li><li><a href="#">Independent Houses</a></li><li><a href="#">Penthouses</a></li></ul></div>
+<div class="footer-col"><h4>Localities</h4><ul><li><a href="#">Sector 40</a></li><li><a href="#">Sector 39</a></li><li><a href="#">Sector 41</a></li><li><a href="#">South City I</a></li><li><a href="#">Greenwood City</a></li></ul></div>
+</div><div class="footer-bottom"><p>© 2026 Ram Properties. All rights reserved. | RERA Registered</p><div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div></div></div></footer>
+
+<a href="https://wa.me/919818049217" class="whatsapp-fab" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<script>
+function setTab(el){document.querySelectorAll('.search-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active')}
+document.querySelectorAll('.filter-btn').forEach(b=>{b.addEventListener('click',function(){document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));this.classList.add('active')});});
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.boxShadow=window.scrollY>50?'0 2px 20px rgba(0,0,0,0.06)':'none'});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})});});
+</script>
+</body>
+</html>
